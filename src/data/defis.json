@@ -1,0 +1,137 @@
+[
+    {
+        "id": 1, "jeu": "Bowling", "defi": "Faire au moins 5 points avec sa main faible", "team": false
+    },
+    {
+        "id": 2, "jeu": "Bowling", "defi": "Réussir à faire un split", "team": true
+    },
+    {
+        "id": 3, "jeu": "Bowling", "defi": "Faire le plus de points des 3 sur le 10e lancers", "team": false
+    },
+    {
+        "id": 4, "jeu": "Bowling", "defi": "Tous les joueurs font +100 points", "team": true
+    },
+    {
+        "id": 5, "jeu": "Bowling", "defi": "Au moins un joueur fait +130 points", "team": true
+    },
+    {
+        "id": 6, "jeu": "Bowling", "defi": "Tous les joueurs font au moins 1 STRIKE", "team": true
+    },
+    {
+        "id": 7, "jeu": "Bowling", "defi": "Faire au moins 1 STRIKE", "team": false
+    },
+    {
+        "id": 8, "jeu": "Bowling", "defi": "Un des joueurs fait 3 STRIKE ou +", "team": true
+    },
+    {
+        "id": 9, "jeu": "Billard", "defi": "Gagner en 1v2", "team": false
+    },
+    {
+        "id": 10, "jeu": "Billard", "defi": "Au moins un joueur met une boule avec la queue dans le dos", "team": true
+    },
+    {
+        "id": 11, "jeu": "Billard", "defi": "Mettre la boule noire avec les 3 bandes", "team": false
+    },
+    {
+        "id": 12, "jeu": "Billard", "defi": "Mettre une boule avec un rebond", "team": false
+    },
+    {
+        "id": 13, "jeu": "Billard", "defi": "Mettre une boule les yeux fermés", "team": false
+    },
+    {
+        "id": 14, "jeu": "Billard", "defi": "Mettre une boule avec un petit saut", "team": true
+    },
+    {
+        "id": 15, "jeu": "Billard", "defi": "Mettre une boule avec 2 bandes", "team": true
+    },
+    {
+        "id": 16, "jeu": "Billard", "defi": "Mettre 2 boules d'affilées", "team": true
+    },
+    {
+        "id": 17, "jeu": "Hockey", "defi": "Gagner avec sa main faible", "team": false
+    },
+    {
+        "id": 18, "jeu": "Hockey", "defi": "Gagner en faisant un stomp 5-1/10-2 etc..", "team": false
+    },
+    {
+        "id": 19, "jeu": "Hockey", "defi": "Gagner 2 parties d'affilées", "team": false
+    },
+    {
+        "id": 20, "jeu": "Arcade", "defi": "Réaliser le meilleur chrono sur un jeu de course de vitesse", "team": false
+    },
+    {
+        "id": 21, "jeu": "Arcade", "defi": "Réussir un jeu de COOP", "team": true
+    },
+    {
+        "id": 22, "jeu": "Arcade", "defi": "A DEFINIR", "team": true
+    },
+    {
+        "id": 23, "jeu": "Arcade", "defi": "A DEFINIR", "team": false
+    },
+    {
+        "id": 24, "jeu": "Arcade", "defi": "Sur un jeu jamais joué, aller le plus loin sur une partie par joueur", "team": false
+    },
+    {
+        "id": 25, "jeu": "Lasermax", "defi": "Au moins 2 à être dans les 3 premiers de l'équipe", "team": true
+    },
+    {
+        "id": 26, "jeu": "Lasermax", "defi": "Arrivé premier des 3", "team": false
+    },
+    {
+        "id": 27, "jeu": "Lasermax", "defi": "Arriver premier de la game", "team": true
+    },
+    {
+        "id": 28, "jeu": "Cube", "defi": "Réussir les 12 cubes", "team": true
+    },
+    {
+        "id": 29, "jeu": "Cube", "defi": "Réussir 10 cubes sur 12", "team": true
+    },
+    {
+        "id": 30, "jeu": "Cube", "defi": "Réussir 8 cubes sur 12", "team": true
+    },
+    {
+        "id": 31, "jeu": "Cube", "defi": "Réussir 7 cubes sur 12", "team": true
+    },
+    {
+        "id": 32, "jeu": "Prison", "defi": "Réaliser +500 points", "team": true
+    },
+    {
+        "id": 33, "jeu": "Prison", "defi": "Réaliser +600 points", "team": true
+    },
+    {
+        "id": 34, "jeu": "Prison", "defi": "Réaliser +700 points", "team": true
+    },
+    {
+        "id": 35, "jeu": "Prison", "defi": "Réaliser +800 points", "team": true
+    },
+    {
+        "id": 36, "jeu": "Prison", "defi": "Arriver dans le top 10 hebdos", "team": true
+    },
+    {
+        "id": 37, "jeu": "Prison", "defi": "Arriver dans le top 5 hebdos", "team": true
+    },
+    {
+        "id": 38, "jeu": "Loldle", "defi": "Réussir en moins de 5 essais", "team": true
+    },
+    {
+        "id": 39, "jeu": "Loldle", "defi": "Réussir compétence moins de 3", "team": true
+    },
+    {
+        "id": 40, "jeu": "Loldle", "defi": "Réussir émoji en moins de 3", "team": true
+    },
+    {
+        "id": 41, "jeu": "Onepiece", "defi": "Réussir en moins de 5", "team": true
+    },
+    {
+        "id": 42, "jeu": "Onepiece", "defi": "Réussir Wanted en moins de 2", "team": true
+    },
+    {
+        "id": 43, "jeu": "Naruto", "defi": "Réussir en moins de 7", "team": true
+    },
+    {
+        "id": 44, "jeu": "Quizz", "defi": "Gagner un quizz onepiece en 1v2", "team": false
+    },
+    {
+        "id": 45, "jeu": "Cocktail", "defi": "Réaliser le meilleur Cocktail", "team": false
+    }
+]
