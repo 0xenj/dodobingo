@@ -21,40 +21,30 @@ function App() {
   }
 
   function generateNewGrid() {
-    // 1) Déterminer le nombre de cartes “A définir” (entre 2 et 4)
     const minAdef = 2;
     const maxAdef = 4;
     const nbAdefinir = Math.floor(Math.random() * (maxAdef - minAdef + 1)) + minAdef;
-    // Total de 25 cases dans la grille
     const totalCases = 25;
   
-    // 2) Mélanger le JSON de défis pour avoir un ordre aléatoire
     const shuffledDefis = [...defisData].sort(() => 0.5 - Math.random());
   
-    // 3) Créer un set pour éviter les doublons (si "defi" ou "id" est unique)
     const uniqueDefis = [];
     const seen = new Set();
   
     for (let i = 0; i < shuffledDefis.length; i++) {
       const d = shuffledDefis[i];
-      // par exemple, on prend d.id comme clé unique :
       if (!seen.has(d.id)) {
         uniqueDefis.push(d);
         seen.add(d.id);
       }
     }
   
-    // 4) Sélectionner (25 - nbAdefinir) défis distincts
-    //    Si uniqueDefis n'a pas assez d'entrées, vous pouvez fallback
     const nbDefisToPick = totalCases - nbAdefinir;
     const selectedDefis = uniqueDefis.slice(0, nbDefisToPick).map((item) => ({
       ...item,
       status: "none",
     }));
   
-    // 5) Générer X cartes “A définir”
-    //    On crée un objet minimal : { id, jeu, defi, team, status } 
-    //    ou tout autre format nécessaire
     const aDefinirCards = Array.from({ length: nbAdefinir }, (_, i) => ({
       id: `adef-${Date.now()}-${i}`, 
       jeu: "Autre",
@@ -63,20 +53,15 @@ function App() {
       status: "none",
     }));
   
-    // 6) Combiner les cartes défis + cartes “A définir”
     const combined = [...selectedDefis, ...aDefinirCards];
   
-    // 7) (Optionnel) Re-mélanger le lot final si vous voulez que 
-    //    les “A définir” soient répartis aléatoirement
     const finalGrid = combined.sort(() => 0.5 - Math.random());
   
-    // 8) Construire la grille
     const newGrille = {
       id: Date.now(),
-      cases: finalGrid, // 25 entrées
+      cases: finalGrid,
     };
   
-    // 9) Mettre à jour le state local + localStorage (comme vous le faisiez avant)
     const newGrilles = [...grilles, newGrille];
     setGrilles(newGrilles);
     setCurrentGridIndex(newGrilles.length - 1);
@@ -93,7 +78,6 @@ function App() {
     const newGrilles = [...grilles];
     newGrilles.splice(currentGridIndex, 1);
 
-    // Si plus de grilles du tout
     if (newGrilles.length === 0) {
       setGrilles([]);
       setCurrentGridIndex(0);
@@ -101,7 +85,6 @@ function App() {
       return;
     }
 
-    // Sinon, on choisit un nouvel index valide
     let newIndex = currentGridIndex;
     if (newIndex >= newGrilles.length) {
       newIndex = newGrilles.length - 1;
@@ -112,15 +95,30 @@ function App() {
     saveGrillesToLocalStorage(newGrilles);
   }
 
-  // Mettre à jour le statut (vert ou rouge, ou none)
   function handleCaseUpdate(cellIndex, newStatus) {
     const newGrilles = [...grilles];
     const currentGrid = { ...newGrilles[currentGridIndex] };
     const updatedCases = [...currentGrid.cases];
 
+    const challengeId = updatedCases[cellIndex].id;
+
     updatedCases[cellIndex].status = newStatus;
     currentGrid.cases = updatedCases;
     newGrilles[currentGridIndex] = currentGrid;
+
+    for (let g = 0; g < newGrilles.length; g++) {
+      const grid = { ...newGrilles[g] };
+      const copiedCases = [...grid.cases];
+  
+      for (let c = 0; c < copiedCases.length; c++) {
+        if (copiedCases[c].id === challengeId) {
+          copiedCases[c].status = newStatus;
+        }
+      }
+  
+      grid.cases = copiedCases;
+      newGrilles[g] = grid;
+    }
 
     setGrilles(newGrilles);
     saveGrillesToLocalStorage(newGrilles);
